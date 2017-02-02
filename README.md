@@ -53,7 +53,7 @@ Otherwise, here is the syntax if your shell is `zsh`:
 
 ```shell
 echo 'export PATH=$PATH:"$HOME/Library/Application Support/SourceTree/scripts/"'  >> ~/.zshrc
-~/.bashrc
+source ~/.zshrc
 ```
 
 After that, you can run any of the scripts via CLI no matter what directory you are, example of running `push-master-to-all-remotes.sh`
