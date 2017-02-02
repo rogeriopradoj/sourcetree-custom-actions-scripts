@@ -19,7 +19,7 @@ git clone https://github.com/rogeriopradoj/sourcetree-custom-actions-scripts.git
 After this, make all the scripts executable:
 
 ```shell
-chmod -R +x "scripts/*.sh"
+chmod -R +x "scripts/"
 ```
 
 Then, go to SourceTree, `Preferences -> Custom Actions -> Add`, filling the options like this:
