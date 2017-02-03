@@ -2,6 +2,7 @@
 
 The commands I'm using to complement SourceTree via Custom Actions
 
+
 ## Installation
 
 Change your current directory to `$HOME/Library/Application Support/SourceTree/`:
@@ -26,9 +27,19 @@ Then, go to SourceTree, `Preferences -> Custom Actions -> Add`, filling the opti
 
 And it's done! Remember that you need to do this process to each of the scripts you want to use as a Custom Action in your machine.
 
-## Updating
+### Updating
 
-You can run `git pull origin master` inside the `$HOME/Library/Application Support/SourceTree/scripts` directory in order to get the latest versions of the scripts.
+You can download latest zip, or run the following command:
+
+```shell
+CWD=`pwd` && \
+    cd "$HOME/Library/Application Support/SourceTree/scripts" && \
+    git pull && \
+    cd $CWD
+```
+
+So, you get the latest versions of the scripts.
+
 
 ## Usage
 
