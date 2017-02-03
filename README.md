@@ -13,7 +13,9 @@ cd "$HOME/Library/Application Support/SourceTree/"
 So, git clone (or download) this repository there: 
 
 ```shell
-git clone https://github.com/rogeriopradoj/sourcetree-custom-actions-scripts.git scripts
+git clone \
+    https://github.com/rogeriopradoj/sourcetree-custom-actions-scripts.git \
+    scripts
 ```
 
 Then, go to SourceTree, `Preferences -> Custom Actions -> Add`, filling the options like this:
@@ -39,20 +41,24 @@ I suggest you adding the folder `$HOME/Library/Application Support/SourceTree/sc
 In case you are using `bash` as your shell, you can do this:
 
 ```shell
-echo 'export PATH=$PATH:"$HOME/Library/Application Support/SourceTree/scripts/"'  >> ~/.bashrc
-source ~/.bashrc
+echo \
+    'export PATH=$PATH:"$HOME/Library/Application Support/SourceTree/scripts/"' \
+    >> ~/.bashrc && \
+    source ~/.bashrc
 ```
 
 Otherwise, here is the syntax if your shell is `zsh`:
 
 ```shell
-echo 'export PATH=$PATH:"$HOME/Library/Application Support/SourceTree/scripts/"'  >> ~/.zshrc
-source ~/.zshrc
+echo \
+    'export PATH=$PATH:"$HOME/Library/Application Support/SourceTree/scripts/"' \
+    >> ~/.zshrc && \
+    source ~/.zshrc
 ```
 
-After that, you can run any of the scripts via CLI no matter inside what directory you are, example of running `push-master-to-all-remotes.sh`
+After that, you can run any of the scripts via CLI no matter inside what directory you are, example of running `git-push-master-to-all-remotes.sh`
 
 ```shell
 cd PATH_TO_ANY_GIT_PROJECT
-push-master-to-all-remotes.sh
+git-push-master-to-all-remotes.sh
 ```
