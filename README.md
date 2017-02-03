@@ -16,12 +16,6 @@ So, git clone (or download) this repository there:
 git clone https://github.com/rogeriopradoj/sourcetree-custom-actions-scripts.git scripts
 ```
 
-After this, make all the scripts executable:
-
-```shell
-chmod -R +x "scripts/"
-```
-
 Then, go to SourceTree, `Preferences -> Custom Actions -> Add`, filling the options like this:
 
 - **Menu Caption**: a custom name for that action;
@@ -56,7 +50,7 @@ echo 'export PATH=$PATH:"$HOME/Library/Application Support/SourceTree/scripts/"'
 source ~/.zshrc
 ```
 
-After that, you can run any of the scripts via CLI no matter what directory you are, example of running `push-master-to-all-remotes.sh`
+After that, you can run any of the scripts via CLI no matter inside what directory you are, example of running `push-master-to-all-remotes.sh`
 
 ```shell
 cd PATH_TO_ANY_GIT_PROJECT
