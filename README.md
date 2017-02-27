@@ -67,9 +67,9 @@ echo \
     source ~/.zshrc
 ```
 
-After that, you can run any of the scripts via CLI no matter inside what directory you are, example of running `git-push-master-to-all-remotes.sh`
+After that, you can run any of the scripts via CLI no matter inside what directory you are, example of running `git-push-master-to-all-remotes`
 
 ```shell
 cd PATH_TO_ANY_GIT_PROJECT
-git-push-master-to-all-remotes.sh
+git-push-master-to-all-remotes
 ```
