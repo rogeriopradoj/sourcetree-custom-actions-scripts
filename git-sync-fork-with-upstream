@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+echo "➜ Origin repository (fork): $(git remote get-url origin)";
+echo "➜ Upstream repository (official): $(git remote get-url upstream)";
+
+git fetch upstream --prune;
+git branch --set-upstream-to upstream/master master;
+for brname in `
+    git branch -r | grep upstream | grep -v master | grep -v HEAD | sed -e 's/^[^\/]*\///'
+`; do
+        git branch --track $brname upstream/$brname 2> /dev/null;
+        git branch --set-upstream-to upstream/$brname $brname;
+done
+
+git pull --rebase upstream;
+git push --all origin;
+
+echo "➜ Origin repository (fork): $(git remote get-url origin)";
+echo "➜ Upstream repository (official): $(git remote get-url upstream)";
