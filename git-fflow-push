@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+BRANCH=`git symbolic-ref --short HEAD`;
+
+for r in $(git remote); do
+    if [ $r = 'origin' ]; then
+        echo ">>>>>> git push $r $BRANCH" && \
+        git push $r $BRANCH;
+    fi
+done

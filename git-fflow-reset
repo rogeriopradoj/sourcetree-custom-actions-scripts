@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+if hash git &>/dev/null; then
+    main_branch="main"
+
+    if git show-ref -q --heads $main_branch; then
+        continue
+    else
+        main_branch="master"
+    fi    
+
+    printf '\033[0;32m%s\033[0m\n' 'checkout to main branch'
+    printf '\033[0;32m%s\033[0m\n' '//'
+    git checkout $main_branch
+    echo '.'
+    printf '\033[0;32m%s\033[0m\n' '\\'
+
+    printf '\033[0;32m%s\033[0m\n' 'pull from origin'
+    printf '\033[0;32m%s\033[0m\n' '//'
+    git pull origin $main_branch
+    echo '.'
+    printf '\033[0;32m%s\033[0m\n' '\\'
+
+    printf '\033[0;32m%s\033[0m\n' 'fetch pruning'
+    printf '\033[0;32m%s\033[0m\n' '//'
+    git fetch -p
+    echo '.'
+    printf '\033[0;32m%s\033[0m\n' '\\'
+
+fi
