@@ -48,13 +48,13 @@ While working in your repositories as normal in SourceTree, go to `Actions -> Cu
 
 ### Extra - Usage via CLI
 
-I suggest you adding the folder `$HOME/Library/Application Support/SourceTree/scripts` in your `$PATH` environment variable. This way, you can use the same scripts via CLI just calling script name, instead of needing to type the full path to each script.
+I suggest you adding the folder `$HOME/Library/Application Support/SourceTree/scripts/bin` in your `$PATH` environment variable. This way, you can use the same scripts via CLI just calling script name, instead of needing to type the full path to each script.
 
 In case you are using `bash` as your shell, you can do this:
 
 ```shell
 echo \
-    'export PATH=$PATH:"$HOME/Library/Application Support/SourceTree/scripts/"' \
+    'export PATH=$PATH:"$HOME/Library/Application Support/SourceTree/scripts/bin"' \
     >> ~/.bashrc && \
     source ~/.bashrc
 ```
@@ -63,7 +63,7 @@ Otherwise, here is the syntax if your shell is `zsh`:
 
 ```shell
 echo \
-    'export PATH=$PATH:"$HOME/Library/Application Support/SourceTree/scripts/"' \
+    'export PATH=$PATH:"$HOME/Library/Application Support/SourceTree/scripts/bin"' \
     >> ~/.zshrc && \
     source ~/.zshrc
 ```
