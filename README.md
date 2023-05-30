@@ -68,9 +68,18 @@ echo \
     source ~/.zshrc
 ```
 
+Remember to make scripts executable:
+
+```shell
+find "$HOME/Library/Application Support/SourceTree/scripts/bin/" -type f -print0 | xargs -0 chmod +x
+```
+
 After that, you can run any of the scripts via CLI no matter inside what directory you are, example of running `git-push-master-to-all-remotes`
 
 ```shell
 cd PATH_TO_ANY_GIT_PROJECT
+#
 git-push-master-to-all-remotes
+# or
+git push-master-to-all-remotes
 ```
