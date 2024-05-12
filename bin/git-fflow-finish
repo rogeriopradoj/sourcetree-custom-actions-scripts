@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
-# BRANCH=`git symbolic-ref --short HEAD`; git checkout master; git merge $BRANCH --no-ff --no-edit; git branch -d $BRANCH
+
+main_branch="main"
+
+if ! git show-ref -q --heads $main_branch; then
+    main_branch="master"
+fi
+
 BRANCH=`git symbolic-ref --short HEAD`;
-git checkout master && \
+
+echo "Branch: $BRANCH"
+echo "main_branch: $main_branch"
+
+git checkout $main_branch && \
 git merge $BRANCH --no-ff --no-edit && \
 git branch -d $BRANCH
