@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Buscar alterações de todos os remotos
+for remote in $(git remote); do
+    echo "Fetching from remote: $remote"
+    git fetch "$remote"
+done
+
+# Excluir todos os branches remotos, exceto master e main
+for remote in $(git remote); do
+    for branch in $(git for-each-ref --format="%(refname:lstrip=3)" "refs/remotes/$remote/"); do
+        if [[ "$branch" != "master" && "$branch" != "main" && "$branch" != "HEAD" ]]; then
+            echo "Deleting remote branch: $branch from remote $remote"
+            git push "$remote" --delete "$branch" 2>/dev/null
+        fi
+    done
+done
